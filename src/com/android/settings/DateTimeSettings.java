@@ -54,6 +54,10 @@ public class DateTimeSettings
     private static final String KEY_DATE_FORMAT = "date_format";
     private static final String KEY_AUTO_TIME = "auto_time";
 
+    private static final String KEY_CALENDAR_TYPE = "calendar_type";
+    private static final String GREGORIAN_CALENDAR = "gregorian";
+    private static final String JALALI_CALENDAR = "jalali";
+
     private static final int DIALOG_DATEPICKER = 0;
     private static final int DIALOG_TIMEPICKER = 1;
     
@@ -63,6 +67,7 @@ public class DateTimeSettings
     private Preference mTimeZone;
     private Preference mDatePref;
     private ListPreference mDateFormat;
+    private ListPreference mCalendarType;
     
     @Override
     protected void onCreate(Bundle icicle) {
@@ -75,10 +80,8 @@ public class DateTimeSettings
     
     private void initUI() {
         boolean autoEnabled = getAutoState();
+        String currentCalendarType = getCalendarType();
 
-        mDummyDate = Calendar.getInstance();
-        mDummyDate.set(mDummyDate.get(Calendar.YEAR), 11, 31, 13, 0, 0);
-        
         mAutoPref = (CheckBoxPreference) findPreference(KEY_AUTO_TIME);
         mAutoPref.setChecked(autoEnabled);
         mTimePref = findPreference("time");
@@ -86,6 +89,30 @@ public class DateTimeSettings
         mTimeZone = findPreference("timezone");
         mDatePref = findPreference("date");
         mDateFormat = (ListPreference) findPreference(KEY_DATE_FORMAT);
+        mCalendarType = (ListPreference) findPreference(KEY_CALENDAR_TYPE);
+        
+        initUIElements();
+        
+        String [] calendarTypes = getResources().getStringArray(R.array.calendar_type_values);
+        mCalendarType.setEntries(calendarTypes);
+        String [] calendarValues = {GREGORIAN_CALENDAR, JALALI_CALENDAR};
+        mCalendarType.setEntryValues(calendarValues);
+        mCalendarType.setValue(currentCalendarType);
+        
+        mTimePref.setEnabled(!autoEnabled);
+        mDatePref.setEnabled(!autoEnabled);
+        mTimeZone.setEnabled(!autoEnabled);
+    }
+    
+    private void initUIElements() {
+        String currentCalendarType = getCalendarType();
+
+        mDummyDate = Calendar.getInstance();
+        if (currentCalendarType.equals(GREGORIAN_CALENDAR)) {
+        	mDummyDate.set(mDummyDate.get(Calendar.YEAR), 11, 31, 13, 0, 0);
+        } else {
+        	mDummyDate.set(1951, 2 /* 3-1 */, 20, 13, 0, 0); // That's 29th Esfand 1329
+        }
         
         String [] dateFormats = getResources().getStringArray(R.array.date_format_values);
         String [] formattedDates = new String[dateFormats.length];
@@ -95,26 +122,36 @@ public class DateTimeSettings
         if (currentFormat == null) {
             currentFormat = "";
         }
-        for (int i = 0; i < formattedDates.length; i++) {
-            String formatted =
-                DateFormat.getDateFormatForSetting(this, dateFormats[i]).
-                    format(mDummyDate.getTime());
-
-            if (dateFormats[i].length() == 0) {
-                formattedDates[i] = getResources().
-                    getString(R.string.normal_date_format, formatted);
-            } else {
-                formattedDates[i] = formatted;
-            }
+        if (currentCalendarType.equals(GREGORIAN_CALENDAR)) {
+	        for (int i = 0; i < formattedDates.length; i++) {
+	            String formatted =
+	                DateFormat.getDateFormatForSetting(this, dateFormats[i]).
+	                    format(mDummyDate.getTime());
+	
+	            if (dateFormats[i].length() == 0) {
+	                formattedDates[i] = getResources().
+	                    getString(R.string.normal_date_format, formatted);
+	            } else {
+	                formattedDates[i] = formatted;
+	            }
+	        }
+        } else {
+	        for (int i = 0; i < formattedDates.length; i++) {
+	            String formatted = DateFormat.format(DateFormat.getDateFormatStringForSetting(this, dateFormats[i]),
+	            		mDummyDate.getTime(), true).toString();
+	
+	            if (dateFormats[i].length() == 0) {
+	                formattedDates[i] = getResources().
+	                    getString(R.string.normal_date_format, formatted);
+	            } else {
+	                formattedDates[i] = formatted;
+	            }
+	        }
         }
-        
+
         mDateFormat.setEntries(formattedDates);
         mDateFormat.setEntryValues(R.array.date_format_values);
         mDateFormat.setValue(currentFormat);
-        
-        mTimePref.setEnabled(!autoEnabled);
-        mDatePref.setEnabled(!autoEnabled);
-        mTimeZone.setEnabled(!autoEnabled);
     }
 
     
@@ -149,8 +186,18 @@ public class DateTimeSettings
         Date dummyDate = mDummyDate.getTime();
         mTimePref.setSummary(DateFormat.getTimeFormat(this).format(now));
         mTimeZone.setSummary(getTimeZoneText());
-        mDatePref.setSummary(shortDateFormat.format(now));
-        mDateFormat.setSummary(shortDateFormat.format(dummyDate));
+        String calendarSummary;
+        if (getCalendarType().equals(GREGORIAN_CALENDAR)) {
+            mDatePref.setSummary(shortDateFormat.format(now));
+            mDateFormat.setSummary(shortDateFormat.format(dummyDate));
+            calendarSummary = getResources().getStringArray(R.array.calendar_type_values)[0];
+        } else {
+            String dateFormat = DateFormat.getDateFormatString(this);
+            mDatePref.setSummary(DateFormat.format(dateFormat, now, true));
+            mDateFormat.setSummary(DateFormat.format(dateFormat, dummyDate, true));
+            calendarSummary = getResources().getStringArray(R.array.calendar_type_values)[1];
+        }
+        mCalendarType.setSummary(calendarSummary);
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -199,6 +246,12 @@ public class DateTimeSettings
             mTimePref.setEnabled(!autoEnabled);
             mDatePref.setEnabled(!autoEnabled);
             mTimeZone.setEnabled(!autoEnabled);
+        } else if (key.equals(KEY_CALENDAR_TYPE)) {
+            String type = preferences.getString(key, getResources().getString(R.string.default_calendar_type));
+            Settings.System.putString(getContentResolver(), 
+                    Settings.System.CALENDAR_TYPE, type);
+            initUIElements();
+            updateTimeAndDateDisplay();
         }
     }
 
@@ -325,6 +378,23 @@ public class DateTimeSettings
         }
 
         Settings.System.putString(getContentResolver(), Settings.System.DATE_FORMAT, format);        
+    }
+
+    private String getCalendarType() {
+        String type = Settings.System.getString(getContentResolver(), 
+            Settings.System.CALENDAR_TYPE);
+        if ((type == null) || (type.length() == 0)) {
+            return getResources().getString(R.string.default_calendar_type);
+        } else {
+            return type;
+        }
+    }
+    
+    private void setCalendarType(String type) {
+        if ((type == null) || (type.length() == 0)) {
+            type = getResources().getString(R.string.default_calendar_type);
+        }
+        Settings.System.putString(getContentResolver(), Settings.System.CALENDAR_TYPE, type);
     }
     
     /*  Helper routines to format timezone */

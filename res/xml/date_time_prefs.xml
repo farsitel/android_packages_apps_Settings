@@ -33,6 +33,10 @@
         android:title="@string/date_time_set_time" 
         android:summary="12:00am"
         />
+    <ListPreference
+        android:key="calendar_type"
+        android:title="@string/date_time_calendar_type"
+        android:summary="calendar_type_placeholder"/>
     <CheckBoxPreference android:key="24 hour" 
         android:title="@string/date_time_24hour"
         android:summaryOn="@string/date_time_24_hour_sample"

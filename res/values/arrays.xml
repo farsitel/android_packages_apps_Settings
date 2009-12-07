@@ -72,6 +72,12 @@
         <item>11</item>
     </string-array>
 
+    <!-- Here's the name of the calendar types. -->
+    <string-array name="calendar_type_values" translatable="true">
+        <item>Gregorian</item>
+        <item>Jalali</item>
+    </string-array>
+
     <!-- Display settings.  The delay in inactivity before the screen is turned off. These are shown ain a list dialog. -->
     <string-array name="screen_timeout_entries">
         <item>15 seconds</item>
