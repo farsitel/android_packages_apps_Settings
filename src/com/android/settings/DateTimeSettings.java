@@ -35,6 +35,7 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.text.format.DateFormat;
+import android.text.format.Jalali;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
@@ -263,11 +264,11 @@ public class DateTimeSettings
         case DIALOG_DATEPICKER: {
             final Calendar calendar = Calendar.getInstance();
             d = new DatePickerDialog(
-                this,
-                this,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH));
+	                this,
+	                this,
+	                calendar.get(Calendar.YEAR),
+	                calendar.get(Calendar.MONTH),
+	                calendar.get(Calendar.DAY_OF_MONTH));
             d.setTitle(getResources().getString(R.string.date_time_changeDate_text));
             break;
         }
@@ -318,6 +319,7 @@ public class DateTimeSettings
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mDatePref) {
+            removeDialog(DIALOG_DATEPICKER);
             showDialog(DIALOG_DATEPICKER);
         } else if (preference == mTimePref) {
             // The 24-hour mode may have changed, so recreate the dialog
