@@ -241,8 +241,8 @@ public class LocalBluetoothManager {
 
     public void setBluetoothEnabled(boolean enabled) {
         boolean wasSetStateSuccessful = enabled
-                ? mAdapter.enable()
-                : mAdapter.disable();
+                ? ((mAdapter != null) && mAdapter.enable())
+                : ((mAdapter != null) &&mAdapter.disable());
 
         if (wasSetStateSuccessful) {
             setBluetoothStateInt(enabled
