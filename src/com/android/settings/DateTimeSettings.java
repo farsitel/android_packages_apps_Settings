@@ -39,6 +39,10 @@ import android.text.format.Jalali;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
+import static android.provider.Settings.System.DEFAULT_CALENDAR_TYPE;
+import static android.provider.Settings.System.GREGORIAN_CALENDAR;
+import static android.provider.Settings.System.JALALI_CALENDAR;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -56,8 +60,6 @@ public class DateTimeSettings
     private static final String KEY_AUTO_TIME = "auto_time";
 
     private static final String KEY_CALENDAR_TYPE = "calendar_type";
-    private static final String GREGORIAN_CALENDAR = "gregorian";
-    private static final String JALALI_CALENDAR = "jalali";
 
     private static final int DIALOG_DATEPICKER = 0;
     private static final int DIALOG_TIMEPICKER = 1;
@@ -248,7 +250,7 @@ public class DateTimeSettings
             mDatePref.setEnabled(!autoEnabled);
             mTimeZone.setEnabled(!autoEnabled);
         } else if (key.equals(KEY_CALENDAR_TYPE)) {
-            String type = preferences.getString(key, getResources().getString(R.string.default_calendar_type));
+            String type = preferences.getString(key, DEFAULT_CALENDAR_TYPE);
             Settings.System.putString(getContentResolver(), 
                     Settings.System.CALENDAR_TYPE, type);
             initUIElements();
@@ -386,16 +388,17 @@ public class DateTimeSettings
         String type = Settings.System.getString(getContentResolver(), 
             Settings.System.CALENDAR_TYPE);
         if ((type == null) || (type.length() == 0)) {
-            return getResources().getString(R.string.default_calendar_type);
+            return DEFAULT_CALENDAR_TYPE;
         } else {
             return type;
         }
     }
     
     private void setCalendarType(String type) {
-        if ((type == null) || (type.length() == 0)) {
-            type = getResources().getString(R.string.default_calendar_type);
-        }
+        if ((type == null) || (type.length() == 0))
+            type = DEFAULT_CALENDAR_TYPE;
+        if ((! type.equals(GREGORIAN_CALENDAR)) && (! type.equals(JALALI_CALENDAR)))
+            type = DEFAULT_CALENDAR_TYPE;
         Settings.System.putString(getContentResolver(), Settings.System.CALENDAR_TYPE, type);
     }
     

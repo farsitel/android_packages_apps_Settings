@@ -271,9 +271,6 @@
     <string name="default_date_format"><xliff:g id="default_date_format">MM/dd/yyyy</xliff:g></string>
     <!-- The calendar type, Gregorian or Jalali. -->
     <string name="date_time_calendar_type">Calendar type</string>
-    <!-- Do not translate. The default calendar type is Gregorain. -->
-    <string name="default_calendar_type">gregorian</string>
-
 
     <!-- The option in the date-format picker for using the normal format
          called for by the user's locale. -->
