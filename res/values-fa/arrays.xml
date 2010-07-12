@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources>
+    <!-- Choices for timezone picker first level.
+         These values will be used as search terms for TimeZone displayName
+         strings. --> <skip />
+    <!-- The time zone picker screen has two levels.  The first level allows the user to choose a region. -->
+    <string-array name="timezone_filters">
+	<!-- The next level of the time zoner picker should show time zones from the Americas. -->
+        <item>آمریکا</item>
+	<!-- The next level of the time zoner picker should show time zones from Europe. -->
+        <item>اروپا</item>
+	<!-- The next level of the time zoner picker should show time zones from Africa. -->
+        <item>آفریقا</item>
+	<!-- The next level of the time zoner picker should show time zones from Asia. -->
+        <item>آسیا</item>
+	<!-- The next level of the time zoner picker should show time zones from Australia. -->
+        <item>استرالیا</item>
+	<!-- The next level of the time zoner picker should show time zones from Pacific. -->
+        <item>اقیانوسیه</item>
+	<!-- The next level of the time zoner picker should show time zones from ALL regions. -->
+        <item>همه</item>
+    </string-array>
+
+    <!-- Display settings.  The type of animations to show. -->
+    <string-array name="animations_entries">
+        <item>بدون حرکت</item>
+        <item>فقط بعضی از حرکات</item>
+        <item>با حرکت</item>
+    </string-array>
+
+    <!-- Display settings.  Summary for each type of animation. -->
+    <string-array name="animations_summaries">
+        <item>هیچ حرکتی برای پنجره‌ها نمایش داده نشود</item>
+        <item>بعضی حرکات برای پنجره‌ها نمایش داده شود</item>
+        <item>همه حرکات برای پنجره‌های نمایش داده شود</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="animations_values">
+        <!-- Do not translate. -->
+        <item>00</item>
+        <!-- Do not translate. -->
+        <item>01</item>
+        <!-- Do not translate. -->
+        <item>11</item>
+    </string-array>
+
+    <!-- Here's the name of the calendar types. -->
+    <string-array name="calendar_type_values" translatable="true">
+        <item>میلادی</item>
+        <item>هجری شمسی</item>
+    </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the screen is turned off. These are shown ain a list dialog. -->
+    <string-array name="screen_timeout_entries">
+        <item>۱۵ ثانیه</item>
+        <item>۳۰ ثانیه</item>
+        <item>۱ دقیقه</item>
+        <item>۲ دقیقه</item>
+        <item>۱۰ دقیقه</item>
+        <item>۳۰ دقیقه</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="screen_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+        <!-- Do not translate. -->
+        <item>600000</item>
+        <!-- Do not translate. -->
+        <item>1800000</item>
+    </string-array>
+
+    <!-- TTS settings -->
+
+    <!-- Default speech rate choices -->
+    <string-array name="tts_rate_entries">
+        <item>بسیار آهسته</item>
+        <item>آهسته</item>
+        <item>معمولی</item>
+        <item>سریع</item>
+        <item>بسیار سریع</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_rate_values">
+        <item>60</item>
+        <item>80</item>
+        <item>100</item>
+        <item>150</item>
+        <item>200</item>
+    </string-array>
+
+    <!-- Default pitch choices -->
+    <string-array name="tts_pitch_entries">
+        <item>بسیار آرام</item>
+        <item>آرام</item>
+        <item>معمولی</item>
+        <item>بالا</item>
+        <item>بسیار بالا</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_pitch_values">
+        <item>50</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>150</item>
+    </string-array>
+    
+    <!-- Default language choices -->
+    <string-array name="tts_lang_entries">
+        <item>American English</item>
+        <item>British English</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Spanish</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_lang_values">
+        <item>eng-USA</item>
+        <item>eng-GBR</item>
+        <item>fra-FRA</item>
+        <item>deu-DEU</item>
+        <item>ita-ITA</item>
+        <item>spa-ESP</item>
+    </string-array>
+    <!-- Do not translate. -->
+    <string-array name="tts_demo_strings">
+        <item>This is an example of speech synthesis in English.</item>
+        <item>This is an example of speech synthesis in English.</item>
+        <item>Voici un échantillon de synthèse vocale en français.</item>
+        <item>Dies ist ein Beispiel für Sprachsynthese in Deutsch.</item>
+        <item>Questo è un esempio di sintesi vocale in italiano.</item>
+        <item>Este es un ejemplo de síntesis de voz en español.</item>
+    </string-array>
+
+    <!-- Wi-Fi settings -->
+
+    <!-- Match this with code. --> <skip />
+    <!-- Wi-Fi settings.  The type of security a Wi-Fi network has.  The user can choose this when he adds a manual network, or configures an existing network. -->
+    <string-array name="wifi_security_entries">
+        <!-- Let the phone figure out the security type auutomatically. -->
+        <item>خودکار</item>
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>هیچکدام</item>
+        <!-- Do not translate. The Wi-Fi network has WEP security. -->
+        <item>WEP</item>
+        <!-- The Wi-Fi network has WPA personal security. WPA Personal is a tech term, and might be better left untranslated? -->
+        <item>WPA/WPA2 PSK</item>
+        <!-- The Wi-Fi network has WPA EAP extensible authentication protocol. -->
+        <item>802.1x Enterprise</item>
+    </string-array>
+
+    <!-- Match this with code. --> <skip />
+    <!-- Wi-Fi settings.  The type of security a Wi-Fi network has.  The user can choose this when he adds a manual network, or configures an existing network. -->
+    <string-array name="wifi_security_without_auto_entries">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>هیچکدام</item>
+        <!-- Do not translate. The Wi-Fi network has WEP security. -->
+        <item>WEP</item>
+        <!-- The Wi-Fi network has WPA personal security. WPA Personal is a tech term, and might be better left untranslated? -->
+        <item>WPA/WPA2 PSK</item>
+        <!-- The Wi-Fi network has WPA enterprise security. WPA Enterprise is a tech term, and might be better left untranslated? -->
+        <item>802.1x Enterprise</item>
+    </string-array>
+
+    <!-- Match this with code. --> <skip />
+    <!-- Wi-Fi settings.  Presented as a list dialog to the user.  He chooses the type of WEP key he entered. -->
+    <string-array name="wifi_wep_type">
+        <!-- This means the phone should figure out the type automatically the best it can. -->
+        <item>خودکار</item>
+        <!-- Do not translate. -->
+        <item>WEP ASCII</item>
+        <!-- WEP key that is in hexadecimal. -->
+        <item>WEP hexadecimal</item>
+    </string-array>
+    
+    <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
+    <string-array name="wifi_sleep_policy_entries">
+        <!-- Wi-Fi should go to sleep when the screen turns off. -->
+        <item>هنگام خاموش شدن صفحه</item>
+        <!-- When plugged in, never go to sleep.  When on battery, go to sleep when screen turns off. -->
+        <item>هنگام اتصال به برق، هرگز خاموش نشود</item>
+        <!-- Never go to sleep. -->
+        <item>هرگز</item>
+    </string-array>
+
+    <!-- Match with wifi_sleep_policy_entries and the values of the settings in Settings class. --> <skip />
+    <!-- Do not translate. -->
+    <string-array name="wifi_sleep_policy_values">
+        <!-- Do not translate. -->
+        <item>0</item>
+        <!-- Do not translate. -->
+        <item>1</item>
+        <!-- Do not translate. -->
+        <item>2</item>
+    </string-array>
+
+    <!-- Match with constants in BatteryHistory class -->
+    <string-array name="battery_history_type_spinner">
+        <item>استفاده از CPU</item>
+        <item>استفاده از شبکه</item>
+        <item>استفاده از GPS</item>
+        <item>استفاده از گیرنده</item>
+        <item>Partial wake usage</item>
+        <item>استفاده‌های دیگر</item>
+    </string-array>
+
+    <!-- Match with constants in BatteryStats class -->
+    <string-array name="battery_history_which_spinner">
+        <item>از آخرین اتصال به برق</item>
+        <item>از زمان راه‌اندازی</item>
+        <item>همیشه</item>
+    </string-array>
+
+    <!-- Display options for UsageStats class -->
+    <string-array name="usage_stats_display_order_types">
+        <item>زمان استفاده</item>
+        <item>دفعات اجرا شدن</item>
+        <item>نام برنامه</item>
+    </string-array>
+
+    <!-- EAP method -->
+    <string-array name="wifi_eap_entries">
+        <item>PEAP</item>
+        <item>TLS</item>
+        <item>TTLS</item>
+    </string-array>
+
+    <!-- Phase 2 options -->
+    <string-array name="wifi_phase2_entries">
+        <item>هیچکدام</item>
+        <item>PAP</item>
+        <item>MSCHAP</item>
+        <item>MSCHAPV2</item>
+        <item>GTC</item>
+    </string-array>
+
+    <!-- Sound settings for emergency tone. -->
+    <string-array name="emergency_tone_entries">
+        <item>خاموش</item>
+        <item>هشدار</item>
+        <item>لرزاننده</item>
+    </string-array>
+
+    <!-- Authentication Types used in APN editor -->
+    <string-array name="apn_auth_entries">
+        <item>هیچکدام</item>
+        <item>PAP</item>
+        <item>CHAP</item>
+        <item>PAP یا CHAP</item>
+    </string-array>
+
+</resources>
