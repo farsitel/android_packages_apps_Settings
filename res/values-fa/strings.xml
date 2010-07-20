@@ -894,15 +894,13 @@
     <!-- Sound settings screen, setting option name checkbox -->
     <string name="silent_mode_title">حالت بی‌صدا</string>
     <!-- Sound settings screen, setting option summary text when going into silent mode.  Media and alarms sounds WILL NOT be silenced in silent mode. -->
-    <string name="silent_mode_summary">همه صداها غیر رسانه‌ها و هشدارها بی‌صدا شدند</string>
+    <string name="silent_mode_summary">همهٔ صداها غیر از صدای رسانه و هشدار را بی‌صدا کن</string>
     <!-- Sound settings screen, setting option summary text when going into silent mode.  Media WILL NOT be silenced in silent mode, but alarms WILL be silenced. -->
     <string name="silent_mode_incl_alarm_summary">همه صداها غیر رسانه‌ها بی‌صدا شدند</string>
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
     <string name="ringtone_title">صدای زنگ گوشی</string>
     <!-- Sound settings screen, setting option summary text -->
     <string name="ringtone_summary">صدای زنگ پیش‌فرض گوشی برای تماس‌های ورودی را تنظیم کنید</string>
-    <!-- Sound settings screen, setting option name -->
-    <string name="ring_volume_title">حجم صدا</string>
     <!-- Sound settings screen, setting option summary text -->
     <string name="ring_volume_summary">حجم صدای زنگ گوشی برای تماس‌های ورودی را تنظیم کنید</string>
     <!-- Sound settings screen, setting option name checkbox -->
@@ -915,8 +913,6 @@
     <string name="notification_sound_summary">صدای زنگ پیش‌فرض اطلاع‌ها را تنظیم کنید</string>
     <!-- Sound settings screen, the title of the volume bar to adjust the incoming call volume -->
     <string name="incoming_call_volume_title">حجم تماس ورودی</string>
-    <!-- Sound settings screen, the title of the volume bar to adjust the notification volume -->
-    <string name="notification_volume_title">حجم اطلاع‌ها</string>
     <!-- Sound settings screen, the caption of the checkbox for having the notification volume be
          the same as the incoming call volume. -->
     <string name="checkbox_notification_same_as_incoming_call">استفاده از حجم صدای تماس‌های ورودی برای اطلاع‌ها</string>
@@ -2181,4 +2177,71 @@
 
     <!-- Name to assign to a Network Access Point that was saved without a name -->
     <string name="untitled_apn">بدون عنوان</string>
+	<!-- Added by Behdad -->
+
+ <!-- Sound and alerts settings -->
+    <!-- Main Settings screen setting option name to go into the sound settings screen -->
+    <string name="sound_settings_title">صدا</string>
+    <!-- Main Settings screen setting option name to go into the display settings screen -->
+    <string name="display_settings_title">نمایش</string>
+    <!-- Sound settings screen, volume title -->
+    <string name="all_volume_title">حجم صدا</string>
+    <!-- Sound settings screen, setting option name -->
+    <string name="ring_volume_title">حجم صدای زنگ</string>
+    <!-- Sound settings screen, setting option name checkbox -->
+    <string name="vibrate_in_silent_title">لرزش در حالت بی‌صدا</string>
+    <!-- Sound settings screen, setting option summary text -->
+    <string name="vibrate_in_silent_summary">در حالت بی‌صدا اجازهٔ لرزش را بده</string>
+    <!-- Sound settings screen, the title of the volume bar to adjust the notification volume -->
+    <string name="notification_volume_title">اطلاع‌ها</string>
+    <!-- Sound settings screen, alarm volume slider title -->
+    <string name="alarm_volume_title">هشدار</string>
+    <!-- Sound settings screen, setting check box label -->
+    <string name="lock_sounds_enable_title">صدای قفل صفحه</string>
+    <!-- Sound settings screen, setting option summary text when check box is selected -->
+    <string name="lock_sounds_enable_summary_on">هنگام قفل کردن و باز کردن صفحه، صدایی را پخش می‌کند</string>
+    <!-- Sound settings screen, setting option summary text when check box is clear -->
+    <string name="lock_sounds_enable_summary_off">هنگام قفل کردن و باز کردن صفحه، صدایی را پخش می‌کند</string>
+    <!-- Sound settings screen, setting option name checkbox to enable/disable audio recording features that improve audio recording in noisy environments -->
+    <string name="sound_category_sound_title">عمومی</string>
+    <string name="sound_category_calls_title">تماس‌های ورودی</string>
+    <string name="sound_category_notification_title">اطلاع‌ها</string>
+    <string name="sound_category_feedback_title">بازخورد</string>
+    <string name="voice_input_output_settings">خروجی و ورودی صدای انسان</string>
+    <!-- Main voice input/output settings screen title -->
+    <string name="voice_input_output_settings_title">تنظیمات خروجی و ورودی صدای انسان</string>
+    <!-- Title of voice search settings list item within voice input/output settings -->
+   <!-- Accessibility settings: Power button category -->
+    <string name="accessibility_power_button_category">دکمهٔ خاموش</string>
+    <!-- Accessibility settings: checkbox title for power button behavior -->
+    <string name="accessibility_power_button_ends_call">دکمهٔ خاموش تماس‌ها را قطع کند</string>
+    <!-- Accessibility settings: power button behavior summary text -->
+    <string name="accessibility_power_button_ends_call_summary">در هنگام یک تماس، فشار دادن دکمهٔ خاموش به جای خاموش کردن صفحهٔ نمایش، تماس را قطع می‌کند</string>
+    <string name="keyboard_settings_title">صفحه‌کلید آندروید</string>
+    <!-- Used for diagnostic info screens, precise translation isn't needed. Unmounts the SD card from the phone, meaning it will become available for an attached computer  -->
+    <string name="sd_insert_summary">یک کارت حافظه برای سوار کردن وارد گوشی کنید</string>
+    <!-- SD card & phone storage settings item title that will result in the phone mounting the SD card. -->
+    <string name="sd_mount">سوار کردن کارت حافظه</string>
+    <!-- SD card & phone storage settings item title that will result in the phone mounting the SD card. -->
+    <string name="sd_mount_summary">سوار کردن کارت حافظه</string>
+    <!-- SD card eject confirmation dialog title   -->
+    <string name="dlg_confirm_unmount_title">پیاده کردن کارت حافظه</string>
+    <!-- SD card eject confirmation dialog  -->
+    <string name="dlg_confirm_unmount_text">اگر کارت حافظه را پیاده کنید، بعضی از برنامه‌هایی که ممکن است هم‌اکنون از آنها استفاده کنید متوقف شوند و سوار کردن مجدد کارت حافظه در دسترس نباشند.</string>
+    <!-- SD card eject error dialog title   -->
+    <string name="dlg_error_unmount_title">پیاده کردن کارت حافظه ناموفق بود</string>
+    <!-- SD card eject error dialog text   -->
+    <string name="dlg_error_unmount_text">نمی‌توان کارت حافظه را پیاده کرد. لطفا دوباره امتحان کنید.</string>
+    <!-- SD card unmount informative text   -->
+    <string name="unmount_inform_text">کارت حافظه پیاده خواهد شد. برای بررسی، نوار وضعیت را بررسی کنید.</string>
+    <!-- SD card eject progress title   -->
+    <string name="sd_ejecting_title">در حال پیاده کردن</string>
+    <!-- SD card eject progress text   -->
+    <string name="sd_ejecting_summary">در حال پیاده کردن کارت حافظه</string>
+    <!-- Dock settings screen, dock events SFX setting check box label -->
+    <string name="dock_sounds_enable_title">تنظیمات صدای پایه</string>
+    <!-- Dock settings screen, setting option summary text when check box is selected -->
+    <string name="dock_sounds_enable_summary_on">هنگام سوار کردن گوشی در پایه یا برداشتن آن صدایی را پخش کن</string>
+    <!-- Sound settings screen, setting option summary text when check box is clear -->
+    <string name="dock_sounds_enable_summary_off">هنگام سوار کردن گوشی در پایه یا برداشتن آن صدایی را پخش نکن</string>
 </resources>
