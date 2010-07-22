@@ -459,7 +459,7 @@
 
     <!-- LocalePicker -->
     <!-- Title for the locale picker activity -->
-    <string name="language_picker_title">محلی</string>
+    <string name="language_picker_title">زبان</string>
     <!-- Locale picker screen. Label for choosing the locale -->
     <string name="select_your_language">زبان خود را انتخاب کنید</string>
 
@@ -1534,11 +1534,11 @@
     <!-- Summary of setting on main settings screen.  This item will take the user to the screen to tweak settings realted to locale and text -->
     <string name="language_settings_summary">محل (زبان و منطقه) را مشخص کنید، گزینه‌های ورودی و تصحیح خودکار</string>
     <!-- On Text & language settings screen, heading. Inside the "Locale & text" screen, this is the header for settings that are for locale changes. -->
-    <string name="language_category">تنظیمات محل</string>
+    <string name="language_category">تنظیمات زبان</string>
     <!-- On Text & language settings screen, heading. Inside the "Locale & text" screen, this is the header for settings that relate to text (autotext, autoreplace, autocapitalization). -->
     <string name="text_category">تنظیمات متن</string>
     <!-- On Text & language settings screen, setting option name. title of the setting to take the user to a screen to select the locale. -->
-    <string name="phone_language">محل را انتخاب کنید</string>
+    <string name="phone_language">زبان را انتخاب کنید</string>
     <!-- On Text & language settings screen, setting option name. summary of the setting to take the user to a screen to select the locale. -->
     <string name="phone_language_summary">زبان و منطقه را انتخاب کنید</string>
     <!-- On Text & language settings screen, setting option name. title of the setting to enable autoreplace of entered text. auto replace is a feature that will automatically correct mistyped words. -->
