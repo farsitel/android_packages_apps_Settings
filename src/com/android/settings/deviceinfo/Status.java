@@ -225,7 +225,7 @@ public class Status extends PreferenceActivity {
         String rawNumber = mPhone.getLine1Number();  // may be null or empty
         String formattedNumber = null;
         if (!TextUtils.isEmpty(rawNumber)) {
-            formattedNumber = PhoneNumberUtils.formatNumber(rawNumber);
+            formattedNumber = String.format("%Ls", PhoneNumberUtils.formatNumber(rawNumber));
         }
         // If formattedNumber is null or empty, it'll display as "Unknown".
         setSummaryText("number", formattedNumber);
