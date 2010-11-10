@@ -839,9 +839,9 @@
     <!-- Summary for the remembered network but currently not in range. -->
     <string name="wifi_not_in_range">در محدوده نیست.</string>
     <!-- Summary for the secured network. -->
-    <string name="wifi_secured">امن شده با <xliff:g id="wifi_security">%1$Ls</xliff:g></string>
+    <string name="wifi_secured">امن شده با <xliff:g id="wifi_security">%1$s</xliff:g></string>
     <!-- Summary for the secured and remembered network. Status can be "Remembered", "Disabled" or "Not in range". -->
-    <string name="wifi_secured_with_status"><xliff:g id="wifi_status">‏%2$Ls</xliff:g> با <xliff:g id="wifi_security">%1$Ls</xliff:g> امن شده است.</string>
+    <string name="wifi_secured_with_status"><xliff:g id="wifi_status">‏%2$s</xliff:g> با <xliff:g id="wifi_security">%1$s</xliff:g> امن شده است.</string>
     <!-- Button label to connect to a Wi-Fi network -->
     <string name="wifi_connect">اتصال</string>
     <!-- Button label to delete a Wi-Fi network -->
@@ -1009,13 +1009,13 @@
     <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
     <string name="ringtone_title">زنگ گوشی</string>
     <!-- Sound settings screen, setting option summary text -->
-    <string name="ringtone_summary">‏‏«»</string>
+    <string name="ringtone_summary">‏‏ </string>
     <!-- Sound settings screen, volume title -->
     <string name="all_volume_title">بلندی</string>
     <!-- Sound settings screen, setting option name -->
     <string name="ring_volume_title">بلندی صدای زنگ</string>
     <!-- Sound settings screen, setting option summary text -->
-    <string name="ring_volume_summary">‏«»</string>
+    <string name="ring_volume_summary">‏ </string>
     <!-- Sound settings screen, setting option name checkbox -->
     <string name="vibrate_in_silent_title">لرزش در حالت بی‌صدا</string>
     <!-- Sound settings screen, setting option summary text -->
@@ -1027,7 +1027,7 @@
     <!-- Sound settings screen, setting option name -->
     <string name="notification_sound_title">زنگ خبر</string>
     <!-- Sound settings screen, setting option summary text -->
-    <string name="notification_sound_summary">‏«»</string>
+    <string name="notification_sound_summary">‏ </string>
     <!-- Sound settings screen, notification light repeat pulsing title -->
     <string name="notification_pulse_title">چشمک زدن توپی</string>
     <!-- Sound settings screen, notification light repeat pulsing summary -->
@@ -1187,7 +1187,7 @@
     <!-- About phone screen, list item title.  Takes the user to the screen for seeing and installing system updates. -->
     <string name="system_update_settings_list_item_title">به‌روزرسانی‌های سیستم</string>
     <!-- About phone screen, list item summary.  Takes the user to the screen for seeing and installing system updates. -->
-    <string name="system_update_settings_list_item_summary">‏«»</string>
+    <string name="system_update_settings_list_item_summary">‏ </string>
 
     <!-- About phone screen, status item label -->
     <string name="firmware_version">نسخهٔ اندروید</string>
@@ -1614,7 +1614,7 @@
     <!-- Applications settings screen, setting check box title. If checked, the system allows installation of applications that are downloaded from random places, such as web sites.  -->
     <string name="install_applications">منابع نامشخص</string>
     <!-- Applications settings screen, setting check box summary.  This is the summary for "Unknown sources" checkbox  -->
-    <string name="install_unknown_applications">اجازهٔ نصب برنامه‌های خارج از «بازار»</string>
+    <string name="install_unknown_applications">اجازهٔ نصب برنامه‌های خارج از بازار</string>
     <!-- Applications settings screen, message text of alert that appears if user selects the "Unknown sources" check box -->
     <string name="install_all_warning">گوشی و اطلاعات شخصی شما با استفاده از برنامه‌هایی که منبع آن‌ها نامشخص است، بیشتر در معرض حملات مخرب قرار می‌گیرد.
 با استفاده از این برنامه‌ها، شما شخصاً مسئولیت هرگونه مشکل و خرابی ناشی از استفاده از این برنامه‌ها در گوشی خود را به عهده می‌گیرید.</string>
@@ -1782,7 +1782,7 @@
     <!-- On Text & language settings screen, setting option name. title of the setting to take the user to a screen to select the locale. -->
     <string name="phone_language">انتخاب زبان</string>
     <!-- On Text & language settings screen, setting option name. summary of the setting to take the user to a screen to select the locale. -->
-    <string name="phone_language_summary">‏«»</string>
+    <string name="phone_language_summary">‏ </string>
     <!-- On Text & language settings screen, setting option name. title of the setting to enable autoreplace of entered text. auto replace is a feature that will automatically correct mistyped words. -->
     <string name="auto_replace">جایگزینی خودکار</string>
     <!-- On Text & language settings screen, setting summary.  This is the summary for the "Auto-replace" setting. -->
@@ -1812,7 +1812,7 @@
     <!-- User dictionary settings, The title of the list item to go into the User dictionary settings screen. -->
     <string name="user_dict_settings_title">واژه‌نامهٔ کاربر</string>
     <!-- User dictionary settings.  The summary of the listem item to go into the User dictionary settings screen. -->
-    <string name="user_dict_settings_summary">‏«»</string>
+    <string name="user_dict_settings_summary"> </string>
     <!-- User dictionary settings. The title of the menu item to add a new word to the user dictionary. -->
     <string name="user_dict_settings_add_menu_title">افزودن</string>
     <!-- User dictionary settings. The title of the dialog to add a new word to the user dictionary. -->
@@ -2064,7 +2064,7 @@
     <!-- Bluetooth on time -->
     <string name="bluetooth_on_time">زمان روشن بودن WiFi</string>
     <!-- Application name and battery usage percentage -->
-    <string name="usage_name_percent"><xliff:g id="name">‏%1$Ls</xliff:g>« - »
+    <string name="usage_name_percent"><xliff:g id="name">‏%1$Ls</xliff:g>" - "
             <xliff:g id="number" example="30">%2$Ls</xliff:g><xliff:g id="percent" example="%">%%</xliff:g></string>
 
     <!-- Activity title for battery usage details for an app. or power consumer -->
@@ -2155,7 +2155,7 @@
     <!-- Suggestion for exploring application info to stop or uninstall -->
     <string name="battery_sugg_apps_info">متوقف کردن یا حذف برنامه</string>
     <!-- Suggestion for getting apps to consume less power due to GPS-->
-    <string name="battery_sugg_apps_gps">‏«زمانی که از GPS استفاده نمی‌کنید، آن را خاموش کنید»</string>
+    <string name="battery_sugg_apps_gps">‏زمانی که از GPS استفاده نمی‌کنید، آن را خاموش کنید.</string>
     <!-- Suggestion for getting apps to consume less power -->
     <string name="battery_sugg_apps_settings">ممکن است برنامه برای کاهش استفاده از باتری تنظیماتی داشته باشد.</string>
 
