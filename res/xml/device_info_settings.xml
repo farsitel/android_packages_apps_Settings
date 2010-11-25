@@ -108,6 +108,12 @@
                 android:title="@string/firmware_version"
                 android:summary="@string/device_info_default"/>
                 
+        <!-- Device FarsiTel version -->
+        <Preference android:key="farsitel_version" 
+                style="?android:preferenceInformationStyle"
+                android:title="@string/device_info_farsitel_label"
+                android:summary="@string/device_info_default"/>
+
         <!-- Device Baseband version -->
         <Preference android:key="baseband_version" 
                 style="?android:preferenceInformationStyle"

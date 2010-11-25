@@ -24,6 +24,10 @@
     <!-- Device Info --> <skip />
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">ناشناس</string>
+    <!-- Device Info screen. Label of Farsitel Version -->
+    <string name="device_info_farsitel_label">نسخهٔ فارسی‌تل</string>
+    <!-- Device Info screen. String template of value of Farsitel Version -->
+    <string name="device_info_farsitel_template">%Ls (%Ls)</string>
 
     <!-- Phone info -->
     <!-- Phone Info screen. Button label to turn on the radio . Only shown in diagnostic screen, so precise translation is not needed. -->
@@ -135,6 +139,8 @@
     <string name="battery_info_awake_plugged">مدت زمان روشن بودن در حال شارژ شدن:</string>
     <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
     <string name="battery_info_screen_on">مدت زمان روشن بودن صفحه:</string>
+    <!-- Battery Info screen. Value format for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_level_format">٪%Ld</string>
 
 
     <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
@@ -909,90 +915,6 @@
     <!-- Default access point SSID used for tethering -->
     <string name="wifi_tether_configure_ssid_default">FarsiTelHotspot</string>
 
-
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Wi-Fi Testing on the diagnostic screen-->
-    <string name="testing_wifi_info" translatable="false">Wifi information</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager disableNetwork API-->
-    <string name="disableNetwork" translatable="false">disableNetwork</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager enableNetwork API-->
-    <string name="enableNetwork" translatable="false">enableNetwork</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager disconnect API-->
-    <string name="disconnect" translatable="false">disconnect</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager getConfiguredNetworks API-->
-    <string name="getConfiguredNetworks" translatable="false">getConfiguredNetworks</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item for WifiManager getConnectionInfo API-->
-    <string name="getConnectionInfo" translatable="false">getConnectionInfo</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item on Wifi information screen-->
-    <string name="wifi_api_test" translatable="false">Wifi API</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item on Wifi information screen-->
-    <string name="wifi_status_test" translatable="false">Wifi Status</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Button text on Wifi Status screen-->
-    <string name="wifi_update" translatable="false">Refresh Stats</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="wifi_state_label" translatable="false">Wifi State :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="network_state_label" translatable="false">Network State :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-        Label on Wifi Status screen-->
-    <string name="supplicant_state_label" translatable="false">Supplicant State :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="rssi_label" translatable="false">RSSI :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="bssid_label" translatable="false">BSSID :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="ssid_label" translatable="false">SSID :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="hidden_ssid_label" translatable="false">Hidden SSID :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="ipaddr_label" translatable="false">IPaddr :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="macaddr_label" translatable="false">MAC addr :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="networkid_label" translatable="false">Network ID :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="link_speed_label" translatable="false">Link Speed :</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Status screen-->
-    <string name="scan_list_label" translatable="false">Scan results :</string>
-
-    <!-- wifi state values-->
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
-    <string name="wifi_state_disabling" translatable="false">Disabling</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
-    <string name="wifi_state_disabled" translatable="false">Disabled</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
-    <string name="wifi_state_enabling" translatable="false">Enabling</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
-    <string name="wifi_state_enabled" translatable="false">Enabled</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
-    <string name="wifi_state_unknown" translatable="false">Unknown</string>
-
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Menu item on Wifi information screen-->
-    <string name="wifi_config_info" translatable="false">Wifi Config</string>
-    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
-         Label on Wifi Configuration screen-->
-    <string name="config_list_label" translatable="false">Configured Networks</string>
-
     <!-- Sound and alerts settings -->
     <!-- Main Settings screen setting option name to go into the sound settings screen -->
     <string name="sound_settings_title">صدا</string>
@@ -1187,10 +1109,10 @@
     <!-- About phone screen, list item title.  Takes the user to the screen for seeing and installing system updates. -->
     <string name="system_update_settings_list_item_title">به‌روزرسانی‌های سیستم</string>
     <!-- About phone screen, list item summary.  Takes the user to the screen for seeing and installing system updates. -->
-    <string name="system_update_settings_list_item_summary">‏ </string>
+    <string name="system_update_settings_list_item_summary">""</string>
 
     <!-- About phone screen, status item label -->
-    <string name="firmware_version">نسخهٔ اندروید</string>
+    <string name="firmware_version">نسخهٔ آندروید</string>
     <!-- About phone screen, status item label-->
     <string name="model_number">شمارهٔ مدل</string>
     <!-- About phone screen,  setting option name-->
@@ -1698,7 +1620,7 @@
     <!-- Manage applications, factory reset dialog title for system applications. -->
     <string name="app_factory_reset_dlg_title">حذف به‌روز رسانی‌ها</string>
     <!-- Manage applications, factory reset option dialog text for system applications. -->
-    <string name="app_factory_reset_dlg_text">همهٔ به‌روز رسانی‌های برنامه‌های سیستمی اندروید حذف شود؟</string>
+    <string name="app_factory_reset_dlg_text">همهٔ به‌روز رسانی‌های برنامه‌های سیستمی آندروید حذف شود؟</string>
     <!-- Manage applications, title for dialog if clear data fails-->
     <string name="clear_failed_dlg_title">پاک کردن داده‌ها</string>
     <!-- Manage applications, text for dialog if clear data fails-->
@@ -2065,7 +1987,7 @@
     <string name="bluetooth_on_time">زمان روشن بودن WiFi</string>
     <!-- Application name and battery usage percentage -->
     <string name="usage_name_percent"><xliff:g id="name">‏%1$Ls</xliff:g>" - "
-            <xliff:g id="number" example="30">%2$Ls</xliff:g><xliff:g id="percent" example="%">%%</xliff:g></string>
+            <xliff:g id="percent" example="%">٪</xliff:g><xliff:g id="number" example="30">%2$Ls</xliff:g></string>
 
     <!-- Activity title for battery usage details for an app. or power consumer -->
     <string name="details_title">جزئيات کارکرد باتری</string>
