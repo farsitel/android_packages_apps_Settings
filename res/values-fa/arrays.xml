@@ -161,45 +161,97 @@
 
     <!-- Wi-Fi settings -->
 
-    <!-- Match this with code. --> <skip />
-    <!-- Wi-Fi settings.  The type of security a Wi-Fi network has.  The user can choose this when he adds a manual network, or configures an existing network. -->
-    <string-array name="wifi_security_entries">
-        <!-- Let the phone figure out the security type auutomatically. -->
-        <item>خودکار</item>
-        <!-- The Wi-Fi network does not have any security. -->
-        <item>هیچکدام</item>
-        <!-- Do not translate. The Wi-Fi network has WEP security. -->
-        <item>WEP</item>
-        <!-- The Wi-Fi network has WPA personal security. WPA Personal is a tech term, and might be better left untranslated? -->
-        <item>WPA/WPA2 PSK</item>
-        <!-- The Wi-Fi network has WPA EAP extensible authentication protocol. -->
-        <item>802.1x Enterprise</item>
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip />
+    <!-- Wi-Fi settings. The status messages when the network is unknown. -->
+    <string-array name="wifi_status">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item></item>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>Scanning\u2026</item>
+        <!-- Status message of Wi-Fi when it is connecting. -->
+        <item>Connecting\u2026</item>
+        <!-- Status message of Wi-Fi when it is authenticating. -->
+        <item>Authenticating\u2026</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address. -->
+        <item>Obtaining IP address\u2026</item>
+        <!-- Status message of Wi-Fi when it is connected. -->
+        <item>Connected</item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>Suspended</item>
+        <!-- Status message of Wi-Fi when it is disconnecting. -->
+        <item>Disconnecting\u2026</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>Disconnected</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>Unsuccessful</item>
     </string-array>
 
-    <!-- Match this with code. --> <skip />
-    <!-- Wi-Fi settings.  The type of security a Wi-Fi network has.  The user can choose this when he adds a manual network, or configures an existing network. -->
-    <string-array name="wifi_security_without_auto_entries">
-        <!-- The Wi-Fi network does not have any security. -->
-        <item>هیچکدام</item>
-        <!-- Do not translate. The Wi-Fi network has WEP security. -->
-        <item>WEP</item>
-        <!-- The Wi-Fi network has WPA personal security. WPA Personal is a tech term, and might be better left untranslated? -->
-        <item>WPA/WPA2 PSK</item>
-        <!-- The Wi-Fi network has WPA enterprise security. WPA Enterprise is a tech term, and might be better left untranslated? -->
-        <item>802.1x Enterprise</item>
+    <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip />
+    <!-- Wi-Fi settings. The status messages when the network is known. -->
+    <string-array name="wifi_status_with_ssid">
+        <!-- Status message of Wi-Fi when it is idle. -->
+        <item></item>
+        <!-- Status message of Wi-Fi when it is scanning. -->
+        <item>Scanning\u2026</item>
+        <!-- Status message of Wi-Fi when it is connecting to a network. -->
+        <item>Connecting to <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <!-- Status message of Wi-Fi when it is authenticating with a network. -->
+        <item>Authenticating with <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
+        <item>Obtaining IP address from <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <!-- Status message of Wi-Fi when it is connected to a network. -->
+        <item>Connected to <xliff:g id="network_name">%1$s</xliff:g></item>
+        <!-- Status message of Wi-Fi when it is suspended. -->
+        <item>Suspended</item>
+        <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
+        <item>Disconnecting from <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <!-- Status message of Wi-Fi when it is disconnected. -->
+        <item>Disconnected</item>
+        <!-- Status message of Wi-Fi when it is a failure. -->
+        <item>Unsuccessful</item>
     </string-array>
 
-    <!-- Match this with code. --> <skip />
-    <!-- Wi-Fi settings.  Presented as a list dialog to the user.  He chooses the type of WEP key he entered. -->
-    <string-array name="wifi_wep_type">
-        <!-- This means the phone should figure out the type automatically the best it can. -->
-        <item>خودکار</item>
+    <!-- Match this with the constants in AccessPoint. --> <skip />
+    <!-- Wi-Fi settings.  The type of security a Wi-Fi network has. -->
+    <string-array name="wifi_security">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>Open</item>
         <!-- Do not translate. -->
-        <item>WEP ASCII</item>
-        <!-- WEP key that is in hexadecimal. -->
-        <item>WEP شانزده شانزدهی</item>
+        <item>WEP</item>
+        <!-- Do not translate. -->
+        <item>WPA/WPA2 PSK</item>
+        <!-- Do not translate. -->
+        <item>802.1x EAP</item>
     </string-array>
-    
+
+   <!-- Wi-Fi AP settings.  The type of security a Wi-Fi AP supports. -->
+   <!-- Note that adding/removing/moving the items will need wifi settings code change. -->
+    <string-array name="wifi_ap_security" translatable="false">
+        <item>Open</item>
+        <!-- Do not translate. -->
+        <item>WPA2 PSK</item>
+    </string-array>
+
+    <!-- Match this with the constants in WifiDialog. --> <skip />
+    <!-- Wi-Fi settings.  The type of EAP method a Wi-Fi network has. -->
+    <string-array name="wifi_eap_method">
+        <!-- Do not translate. -->
+        <item>PEAP</item>
+        <!-- Do not translate. -->
+        <item>TLS</item>
+        <!-- Do not translate. -->
+        <item>TTLS</item>
+    </string-array>
+
+    <!-- Match this with drawable.wifi_signal. --> <skip />
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>Poor</item>
+        <item>Fair</item>
+        <item>Good</item>
+        <item>Excellent</item>
+    </string-array>
+
     <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
     <string-array name="wifi_sleep_policy_entries">
         <!-- Wi-Fi should go to sleep when the screen turns off. -->
@@ -275,7 +327,14 @@
         <item>CHAP</item>
         <item>PAP یا CHAP</item>
     </string-array>
-	<!-- Added by Behdad -->
+
+    <!-- Apps on SD instalaltion location options in ApplicationSettings -->
+    <string-array name="app_install_location_entries">
+        <item>Internal device storage</item>
+        <item>Removable SD card</item>
+        <item>Let the system decide</item>
+    </string-array>
+
     <!-- New incoming call vibrate options. -->
     <string-array name="vibrate_entries">
         <item>همیشه</item>
