@@ -1116,7 +1116,7 @@
     <!-- About phone screen, status item label-->
     <string name="model_number">شمارهٔ مدل</string>
     <!-- About phone screen,  setting option name-->
-    <string name="baseband_version">Baseband Version</string>
+    <string name="baseband_version">نسخهٔ Baseband</string>
     <!-- About phone screen,  setting option name-->
     <string name="kernel_version">نسخهٔ کِرنل</string>
     <!-- About phone screen,  setting option name-->
