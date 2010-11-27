@@ -24,6 +24,10 @@
     <!-- Device Info --> <skip />
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">Unknown</string>
+    <!-- Device Info screen. Label of Farsitel Version -->
+    <string name="device_info_farsitel_label">FarsiTel Version</string>
+    <!-- Device Info screen. String template of value of Farsitel Version -->
+    <string name="device_info_farsitel_template">%s (%s)</string>
 
     <!-- Phone info -->
     <!-- Phone Info screen. Button label to turn on the radio . Only shown in diagnostic screen, so precise translation is not needed. -->
@@ -134,7 +138,9 @@
     <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
     <string name="battery_info_awake_plugged">Awake time when charging:</string>
     <!-- Battery Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
-    <string name="battery_info_screen_on">Screen ON time:</string>
+    <string name="battery_info_screen_on">Screen ON time:</string>    
+    <!-- Battery Info screen. Value format for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="battery_info_level_format">%d%%</string>
 
 
     <!-- Battery Info screen. Value for a status item.  Used for diagnostic info screens, precise translation isn't needed -->

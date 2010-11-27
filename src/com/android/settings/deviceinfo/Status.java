@@ -125,7 +125,7 @@ public class Status extends PreferenceActivity {
                 int level = intent.getIntExtra("level", 0);
                 int scale = intent.getIntExtra("scale", 100);
                 
-                mBatteryLevel.setSummary(String.valueOf(level * 100 / scale) + "%");
+                mBatteryLevel.setSummary(String.format(getString(R.string.battery_info_level_format), level * 100 / scale));
                 
                 int plugType = intent.getIntExtra("plugged", 0);
                 int status = intent.getIntExtra("status", BatteryManager.BATTERY_STATUS_UNKNOWN);
@@ -408,19 +408,11 @@ public class Status extends PreferenceActivity {
         mUptime.setSummary(convert(ut));
     }
     
-    private String pad(int n) {
-        if (n >= 10) {
-            return String.valueOf(n);
-        } else {
-            return "0" + String.valueOf(n);
-        }
-    }
-
     private String convert(long t) {
         int s = (int)(t % 60);
         int m = (int)((t / 60) % 60);
         int h = (int)((t / 3600));
 
-        return h + ":" + pad(m) + ":" + pad(s);
+        return String.format("%Ld:%L02d:%L02d", h, m, s);
     }
 }

@@ -56,7 +56,8 @@ public class DeviceInfoSettings extends PreferenceActivity {
         
         addPreferencesFromResource(R.xml.device_info_settings);
        
-        setStringSummary("firmware_version", Build.VERSION.RELEASE);
+        setStringSummary("firmware_version", String.format("%Ls", Build.VERSION.RELEASE));
+        setStringSummary("farsitel_version", String.format(getResources().getString(R.string.device_info_farsitel_template), Build.FARSITEL.VERSION, Build.FARSITEL.BATCHNO));
         setValueSummary("baseband_version", "gsm.version.baseband");
         setStringSummary("device_model", Build.MODEL);
         setStringSummary("build_number", Build.DISPLAY);
@@ -131,42 +132,18 @@ public class DeviceInfoSettings extends PreferenceActivity {
             BufferedReader reader = new BufferedReader(new FileReader("/proc/version"), 256);
             try {
                 procVersionStr = reader.readLine();
+                int i = procVersionStr.indexOf('-');
+                if (i >= 0)
+                    return procVersionStr.substring(0, i);
             } finally {
                 reader.close();
-            }
-
-            final String PROC_VERSION_REGEX =
-                "\\w+\\s+" + /* ignore: Linux */
-                "\\w+\\s+" + /* ignore: version */
-                "([^\\s]+)\\s+" + /* group 1: 2.6.22-omap1 */
-                "\\(([^\\s@]+(?:@[^\\s.]+)?)[^)]*\\)\\s+" + /* group 2: (xxxxxx@xxxxx.constant) */
-                "\\((?:[^(]*\\([^)]*\\))?[^)]*\\)\\s+" + /* ignore: (gcc ..) */
-                "([^\\s]+)\\s+" + /* group 3: #26 */
-                "(?:PREEMPT\\s+)?" + /* ignore: PREEMPT (optional) */
-                "(.+)"; /* group 4: date */
-
-            Pattern p = Pattern.compile(PROC_VERSION_REGEX);
-            Matcher m = p.matcher(procVersionStr);
-
-            if (!m.matches()) {
-                Log.e(TAG, "Regex did not match on /proc/version: " + procVersionStr);
-                return "Unavailable";
-            } else if (m.groupCount() < 4) {
-                Log.e(TAG, "Regex match on /proc/version only returned " + m.groupCount()
-                        + " groups");
-                return "Unavailable";
-            } else {
-                return (new StringBuilder(m.group(1)).append("\n").append(
-                        m.group(2)).append(" ").append(m.group(3)).append("\n")
-                        .append(m.group(4))).toString();
             }
         } catch (IOException e) {  
             Log.e(TAG,
                 "IO Exception when getting kernel version for Device Info screen",
                 e);
-
-            return "Unavailable";
         }
+        return "Unavailable";
     }
 
 }
