@@ -48,9 +48,9 @@
 
     <!-- Display settings.  Summary for each type of animation. -->
     <string-array name="animations_summaries">
-        <item>هیچ حرکتی برای پنجره‌ها نمایش داده نشود</item>
-        <item>بعضی حرکات برای پنجره‌ها نمایش داده شود</item>
-        <item>همه حرکات برای پنجره‌های نمایش داده شود</item>
+        <item>هیچ حرکتی برای پنجره‌ها نمایش داده نشود.</item>
+        <item>بعضی حرکات برای پنجره‌ها نمایش داده شود.</item>
+        <item>همه حرکات برای پنجره‌های نمایش داده شود.</item>
     </string-array>
 
     <!-- Here's the name of the calendar types. -->
@@ -107,23 +107,23 @@
         <!-- Status message of Wi-Fi when it is idle. -->
         <item></item>
         <!-- Status message of Wi-Fi when it is scanning. -->
-        <item>Scanning\u2026</item>
+        <item>در حال جستجو\u2026</item>
         <!-- Status message of Wi-Fi when it is connecting. -->
-        <item>Connecting\u2026</item>
+        <item>در حال برقراری اتصال\u2026</item>
         <!-- Status message of Wi-Fi when it is authenticating. -->
-        <item>Authenticating\u2026</item>
+        <item>در حال تأیید هویت\u2026</item>
         <!-- Status message of Wi-Fi when it is obtaining IP address. -->
-        <item>Obtaining IP address\u2026</item>
+        <item>در حال دریافت نشانی IP\u2026</item>
         <!-- Status message of Wi-Fi when it is connected. -->
-        <item>Connected</item>
+        <item>متصل</item>
         <!-- Status message of Wi-Fi when it is suspended. -->
-        <item>Suspended</item>
+        <item>معلق</item>
         <!-- Status message of Wi-Fi when it is disconnecting. -->
-        <item>Disconnecting\u2026</item>
+        <item>در حال قطعِ اتصال\u2026</item>
         <!-- Status message of Wi-Fi when it is disconnected. -->
-        <item>Disconnected</item>
+        <item>غیرمتصل</item>
         <!-- Status message of Wi-Fi when it is a failure. -->
-        <item>Unsuccessful</item>
+        <item>ناموفق</item>
     </string-array>
 
     <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip />
@@ -132,30 +132,30 @@
         <!-- Status message of Wi-Fi when it is idle. -->
         <item></item>
         <!-- Status message of Wi-Fi when it is scanning. -->
-        <item>Scanning\u2026</item>
+        <item>در حال جستجو\u2026</item>
         <!-- Status message of Wi-Fi when it is connecting to a network. -->
-        <item>Connecting to <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <item>در حال اتصال به <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
         <!-- Status message of Wi-Fi when it is authenticating with a network. -->
-        <item>Authenticating with <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <item>در حال تأیید هویت برای <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
         <!-- Status message of Wi-Fi when it is obtaining IP address from a network. -->
-        <item>Obtaining IP address from <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <item>در حال دریافت نشانی IP از <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
         <!-- Status message of Wi-Fi when it is connected to a network. -->
-        <item>Connected to <xliff:g id="network_name">%1$s</xliff:g></item>
+        <item>اتصال به <xliff:g id="network_name">%1$s</xliff:g> برقرار شد.</item>
         <!-- Status message of Wi-Fi when it is suspended. -->
-        <item>Suspended</item>
+        <item>معلق</item>
         <!-- Status message of Wi-Fi when it is disconnecting from a network. -->
-        <item>Disconnecting from <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
+        <item>در حال قطعِ اتصال از <xliff:g id="network_name">%1$s</xliff:g>\u2026</item>
         <!-- Status message of Wi-Fi when it is disconnected. -->
-        <item>Disconnected</item>
+        <item>غیرمتصل</item>
         <!-- Status message of Wi-Fi when it is a failure. -->
-        <item>Unsuccessful</item>
+        <item>ناموفق</item>
     </string-array>
 
     <!-- Match this with the constants in AccessPoint. --> <skip />
     <!-- Wi-Fi settings.  The type of security a Wi-Fi network has. -->
     <string-array name="wifi_security">
         <!-- The Wi-Fi network does not have any security. -->
-        <item>Open</item>
+        <item>ناامن</item>
         <!-- Do not translate. -->
         <item>WEP</item>
         <!-- Do not translate. -->
@@ -178,10 +178,10 @@
     <!-- Match this with drawable.wifi_signal. --> <skip />
     <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
     <string-array name="wifi_signal">
-        <item>Poor</item>
-        <item>Fair</item>
-        <item>Good</item>
-        <item>Excellent</item>
+        <item>ضعیف</item>
+        <item>معمولی</item>
+        <item>خوب</item>
+        <item>عالی</item>
     </string-array>
 
     <!-- Wi-Fi settings. Presented as a list dialog to the user to choose the Wi-Fi sleep policy. -->
@@ -189,19 +189,19 @@
         <!-- Wi-Fi should go to sleep when the screen turns off. -->
         <item>هنگام خاموش شدن صفحه</item>
         <!-- When plugged in, never go to sleep.  When on battery, go to sleep when screen turns off. -->
-        <item>هنگام اتصال به برق، هرگز خاموش نشود</item>
+        <item>هنگام اتصال به برق، هرگز خاموش نشود.</item>
         <!-- Never go to sleep. -->
         <item>هرگز</item>
     </string-array>
 
     <!-- Match with constants in BatteryHistory class -->
     <string-array name="battery_history_type_spinner">
-        <item>استفاده از CPU</item>
-        <item>استفاده از شبکه</item>
-        <item>استفاده از GPS</item>
-        <item>استفاده از گیرنده</item>
-        <item>Partial wake usage</item>
-        <item>استفاده‌های دیگر</item>
+        <item>‏CPU</item>
+        <item>شبکه</item>
+        <item>‏GPS</item>
+        <item>گیرنده</item>
+        <item>فعالیت CPU به تنهایی</item>
+        <item>موارد دیگر</item>
     </string-array>
 
     <!-- Match with constants in BatteryStats class -->
@@ -251,9 +251,9 @@
 
     <!-- Apps on SD instalaltion location options in ApplicationSettings -->
     <string-array name="app_install_location_entries">
-        <item>Internal device storage</item>
-        <item>Removable SD card</item>
-        <item>Let the system decide</item>
+        <item>حافظهٔ داخلی گوشی</item>
+        <item>کارت حافظه</item>
+        <item>گوشی تصمیم بگیرد!</item>
     </string-array>
 
     <!-- New incoming call vibrate options. -->
