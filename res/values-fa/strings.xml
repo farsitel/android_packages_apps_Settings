@@ -183,7 +183,7 @@
     <!-- Bluetooth settings screen, check box label when the Bluetooth device can be seen by others -->
     <string name="bluetooth_visibility">پیدا شدنی</string>
     <!-- Bluetooth settings screen, summary after selecting Discoverable check box -->
-    <string name="bluetooth_is_discoverable">پیدا شدنی به مدت<xliff:g id="discoverable_time_period">%1$Ls</xliff:g> ثانیه\u2026</string>
+    <string name="bluetooth_is_discoverable">پیدا شدنی به مدت <xliff:g id="discoverable_time_period">%1$Ls</xliff:g> ثانیه\u2026</string>
     <!-- Bluetooth settings screen, Discoverable checkbox summary text -->
     <string name="bluetooth_not_discoverable">گوشی توسط دستگاه‌های دیگر پیدا شود.</string>
     <!-- Bluetooth settings screen, heading above the list of nearby bluetooth devices -->
