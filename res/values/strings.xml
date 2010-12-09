@@ -2009,6 +2009,12 @@ found in the list of installed applications.</string>
     <!-- XXX remove? Used for Screen on time message in BatteryHistory -->
     <string name="battery_history_screen_on_plugged">Plugged in:</string>
 
+    <string name="battery_history_percent_template">(%d%%)</string>
+    <string name="battery_history_format_ratio_no_den">---%%</string>
+    <string name="battery_history_format_ratio_template">%.1f%%</string>
+
+    <string name="power_usage_percent_format">%d%%</string>
+
     <!-- XXX remove? Strings used for displaying usage statistics -->
     <string name="usage_stats_label">Usage statistics</string>
 

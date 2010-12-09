@@ -87,7 +87,7 @@ public class PowerGaugePreference extends Preference {
         appGauge.setImageDrawable(mGauge);
 
         TextView percentView = (TextView) view.findViewById(R.id.percent);
-        percentView.setText((int) (Math.ceil(mPercent)) + "%");
+        percentView.setText(getContext().getString(R.string.power_usage_percent_format, (int) (Math.ceil(mPercent))));
     }
 
 }

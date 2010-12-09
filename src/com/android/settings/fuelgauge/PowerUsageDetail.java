@@ -117,12 +117,15 @@ public class PowerUsageDetail extends Activity implements Button.OnClickListener
     private static final String TAG = "PowerUsageDetail";
     private String[] mPackages;
 
+    private String mPercentFormat = "%d%%";
+
     ApplicationInfo mApp;
     ComponentName mInstaller;
     
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        mPercentFormat = getString(R.string.power_usage_percent_format);
         setContentView(R.layout.power_usage_details);
         createDetails();
     }
@@ -177,7 +180,7 @@ public class PowerUsageDetail extends Activity implements Button.OnClickListener
         mTitleView = (TextView) findViewById(R.id.name);
         mTitleView.setText(mTitle);
         ((TextView)findViewById(R.id.battery_percentage))
-            .setText(String.format("%d%%", percentage));
+            .setText(String.format(mPercentFormat, percentage));
 
         mTwoButtonsPanel = (ViewGroup) findViewById(R.id.two_buttons_panel);
         mForceStopButton = (Button) findViewById(R.id.left_button);
@@ -279,7 +282,7 @@ public class PowerUsageDetail extends Activity implements Button.OnClickListener
                         value = Utils.formatBytes(this, mValues[i]);
                         break;
                     case R.string.usage_type_no_coverage:
-                        value = String.format("%d%%", (int) Math.floor(mValues[i]));
+                        value = String.format(mPercentFormat, (int) Math.floor(mValues[i]));
                         break;
                     case R.string.usage_type_gps:
                         mUsesGps = true;

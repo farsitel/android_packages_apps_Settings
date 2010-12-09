@@ -448,9 +448,8 @@ public class BatteryHistory extends Activity implements OnClickListener, OnItemS
             info.append(mInfoLabel != null ? mInfoLabel : getString(mInfoLabelRes));
             info.append(' ');
             formatTime(mUsage[0], info);
-            info.append(" (");
-            info.append((mUsage[0]*100)/mTotalRealtime);
-            info.append("%)");
+            info.append(' ');
+            info.append(getString(R.string.battery_history_percent_template, (mUsage[0]*100)/mTotalRealtime));
         }
     }
     
@@ -674,11 +673,11 @@ public class BatteryHistory extends Activity implements OnClickListener, OnItemS
     
     private final String formatRatio(long num, long den) {
         if (den == 0L) {
-            return "---%";
+            return getString(R.string.battery_history_format_ratio_no_den);
         }
         float perc = ((float)num) / ((float)den) * 100;
         mFormatBuilder.setLength(0);
-        mFormatter.format("%.1f%%", perc);
+        mFormatter.format(getString(R.string.battery_history_format_ratio_template), perc);
         return mFormatBuilder.toString();
     }
     

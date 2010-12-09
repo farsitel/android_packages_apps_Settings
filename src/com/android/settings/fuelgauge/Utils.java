@@ -74,11 +74,11 @@ public class Utils {
     public static String formatBytes(Context context, double bytes) {
         // TODO: I18N
         if (bytes > 1000 * 1000) {
-            return String.format("%.2f MB", ((int) (bytes / 1000)) / 1000f);
+            return String.format("%L.2f MB", ((int) (bytes / 1000)) / 1000f);
         } else if (bytes > 1024) {
-            return String.format("%.2f KB", ((int) (bytes / 10)) / 100f);
+            return String.format("%L.2f KB", ((int) (bytes / 10)) / 100f);
         } else {
-            return String.format("%d bytes", (int) bytes);
+            return String.format("%Ld bytes", (int) bytes);
         }
     }
 }
