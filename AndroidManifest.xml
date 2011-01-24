@@ -179,14 +179,11 @@
         </activity>
 
         <activity android:name=".TetherSettings"
-                android:clearTaskOnLaunch="true"
-                android:label="@string/tether_settings_title_wifi"
-                android:icon="@drawable/ic_launcher_tethering">
+                android:clearTaskOnLaunch="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.VOICE_LAUNCH" />
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
