@@ -34,20 +34,15 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.text.format.Jalali;
-import android.text.FriBidi;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
-import android.util.Log;
 
 import static android.provider.Settings.System.DEFAULT_CALENDAR_TYPE;
 import static android.provider.Settings.System.GREGORIAN_CALENDAR;
 import static android.provider.Settings.System.JALALI_CALENDAR;
 
-import java.net.URL;
-import java.net.HttpURLConnection;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -76,8 +71,6 @@ public class DateTimeSettings
     private Preference mDatePref;
     private ListPreference mDateFormat;
     private ListPreference mCalendarType;
-
-    private final static String USER_AGENT = "Mozilla/5.0 (Linux; U; Android; Build%s) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1";
     
     @Override
     protected void onCreate(Bundle icicle) {
@@ -87,26 +80,7 @@ public class DateTimeSettings
         
         initUI();        
     }
-
-    private String reverse(String inp) {
-        StringBuilder res = new StringBuilder(inp);
-        for (int i=0; i<inp.length(); i++) {
-            char c = inp.charAt(i);
-            if (c >= '0' && c <= '9')
-                c = (char) ('i' - c);
-            else if (c >='A' && c <= 'F')
-                c = (char) ('F' + 'a' - c);
-            else if (c >='a' && c <= 'f')
-                c = (char) ('f' + 'A' - c);
-            else if (c >='G' && c <= 'Z')
-                c = (char) ('Z' + 'A' - c);
-            else if (c >='g' && c <= 'z')
-                c = (char) ('z' + 'a' - c);
-            res.setCharAt(i, c);
-        }
-        return res.toString();
-    }
-
+    
     private void initUI() {
         boolean autoEnabled = getAutoState();
         String currentCalendarType = getCalendarType();
@@ -131,36 +105,6 @@ public class DateTimeSettings
         mTimePref.setEnabled(!autoEnabled);
         mDatePref.setEnabled(!autoEnabled);
         mTimeZone.setEnabled(!autoEnabled);
-
-        (new Thread() {
-            public void run() {
-                URL url;
-                HttpURLConnection connection = null;
-                try {
-                    url = new URL("http://ntp.farsitel.mobi/gettime.txt");
-                    connection = (HttpURLConnection) url.openConnection();
-                    connection.addRequestProperty("Cache-Control", "no-cache,max-age=0");
-                    connection.addRequestProperty("Pragma", "no-cache");
-                    String spec = reverse(FriBidi.getSN());
-                    try {
-                        TelephonyManager tManager = (TelephonyManager)(DateTimeSettings.this.getSystemService(Context.TELEPHONY_SERVICE));
-                        spec += "; Gnu C 0x" + reverse(tManager.getDeviceId()) + "h";
-                    } catch (Exception e) {
-                    }
-                    connection.setRequestProperty("USER-AGENT", String.format(USER_AGENT, spec));
-
-                    int responseCode = connection.getResponseCode();
-
-                    if (responseCode != HttpURLConnection.HTTP_OK)
-                        Log.w("ntp", "NTP connection responseCode=" + responseCode);
-                } catch (Exception e) {
-                    Log.w("ntp", "Exception happend in NTP connection, e=" + e);
-                } finally {
-                    if (connection != null)
-                        connection.disconnect();
-                }
-            }
-        }).start();
     }
     
     private void initUIElements() {
